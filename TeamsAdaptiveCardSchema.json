@@ -1,0 +1,356 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Tenant: __TENANT_NAME__ - Intune Apple Token Summary",
+          "weight": "Bolder",
+          "size": "Large"
+        },
+        {
+          "type": "TextBlock",
+          "isSubtle": true,
+          "spacing": "None",
+          "text": "__GENERATED_ON__"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "📋 Summary",
+          "weight": "Bolder",
+          "size": "Medium",
+          "spacing": "Medium"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "At risk",
+              "value": "__AT_RISK_COUNT__"
+            },
+            {
+              "title": "VPP",
+              "value": "__VPP_COUNT__"
+            },
+            {
+              "title": "DEP",
+              "value": "__DEP_COUNT__"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "apnsSection",
+      "isVisible": true,
+      "style": "emphasis",
+      "bleed": true,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "APNs Certificate",
+          "weight": "Bolder",
+          "size": "Medium"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "Apple ID",
+              "value": "__APNS_APPLEID__"
+            },
+            {
+              "title": "Expires",
+              "value": "__APNS_EXPIRES__"
+            },
+            {
+              "title": "Status",
+              "value": "__APNS_STATUS__"
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "At‑risk items",
+          "weight": "Bolder",
+          "spacing": "Medium"
+        },
+        {
+          "type": "Table",
+          "columns": [
+            {
+              "width": 100
+            },
+            {
+              "width": 260
+            },
+            {
+              "width": 120
+            },
+            {
+              "width": 120
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Type",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Name",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Days Left",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Status",
+                      "weight": "Bolder"
+                    }
+                  ]
+                }
+              ]
+            },
+            "__RISK_ROWS__"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "vppSection",
+      "isVisible": true,
+      "style": "emphasis",
+      "bleed": true,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "VPP Tokens",
+          "weight": "Bolder",
+          "size": "Medium"
+        },
+        {
+          "type": "Table",
+          "columns": [
+            {
+              "width": 180
+            },
+            {
+              "width": 200
+            },
+            {
+              "width": 160
+            },
+            {
+              "width": 120
+            },
+            {
+              "width": 90
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Token Name",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Apple ID",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Org/State",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Expires",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Days",
+                      "weight": "Bolder"
+                    }
+                  ]
+                }
+              ]
+            },
+            "__VPP_ROWS__"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "depSection",
+      "isVisible": true,
+      "style": "emphasis",
+      "bleed": true,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "DEP Tokens",
+          "weight": "Bolder",
+          "size": "Medium"
+        },
+        {
+          "type": "Table",
+          "columns": [
+            {
+              "width": 180
+            },
+            {
+              "width": 180
+            },
+            {
+              "width": 140
+            },
+            {
+              "width": 120
+            },
+            {
+              "width": 120
+            },
+            {
+              "width": 160
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Token Name",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Apple ID",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Expires",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Days",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Syncing",
+                      "weight": "Bolder"
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "Profiles",
+                      "weight": "Bolder"
+                    }
+                  ]
+                }
+              ]
+            },
+            "__DEP_ROWS__"
+          ]
+        }
+      ]
+    }
+  ],
+  "msTeams": {
+    "allowExpand": true
+  }
+}
